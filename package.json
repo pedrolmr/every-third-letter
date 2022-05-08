@@ -1,0 +1,31 @@
+{
+  "name": "every-third-letter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "10.14.2",
+    "npm": "6.14.2"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrolmr/every-third-letter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedrolmr/every-third-letter/issues"
+  },
+  "homepage": "https://github.com/pedrolmr/every-third-letter#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0"
+  }
+}
