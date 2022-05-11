@@ -26,6 +26,14 @@ pool.connect((err, client) => {
     return console.error('Error acquiring client', err.stack)
   }else{
     console.log('Database connected successfully!');
+    client.query(`CREATE TABLE IF NOT EXISTS word(
+      word_id SERIAL PRIMARY KEY,
+      string_to_cut VARCHAR(255),
+      return_string VARCHAR(255)
+    )`, (err, res) => {
+      if (err) throw err;
+      console.log('Table created successfully!');
+    })
   }
 })
 
