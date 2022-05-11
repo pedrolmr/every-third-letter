@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js"
-  },    
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pedrolmr/every-third-letter.git"
@@ -22,12 +22,12 @@
   },
   "homepage": "https://github.com/pedrolmr/every-third-letter#readme",
   "dependencies": {
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "pg": "^8.7.3",
     "serve": "^13.0.2"
   },
   "devDependencies": {
-    "dotenv": "^16.0.0",
     "nodemon": "^2.0.16"
   }
 }
