@@ -1,4 +1,5 @@
 const Pool = require("pg").Pool;
+const {Client} = require('pg');
 require("dotenv").config();
 
 const devConfig = {
@@ -17,5 +18,25 @@ const proConfig = {
 const pool = new Pool(
     process.env.NODE_ENV === "production" ? proConfig : devConfig,
 );
+
+pool.connect((err, client) => {
+  if (err) {
+    return console.error('Error acquiring client', err.stack)
+  }else{
+    console.log('Database connected successfully!');
+  }
+})
+
+// const db_Url = process.env.NODE_ENV === "production" ? proConfig : devConfig;
+
+// const client = new Client({db_Url});
+
+// console.log("db_Url", db_Url)
+
+// global.client = client;
+
+// client.connect()
+// .then(connect => console.log('Databse connected successfully!'))
+// .catch(err => console.log('Error connecting to database', err))
 
 module.exports = pool;
