@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const pool = require("./db");
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 
@@ -29,6 +29,7 @@ app.post("/test", async (req, res) => {
     console.log(req.body);
     const { string_to_cut } = req.body;
     const return_string = everyThreeLetter(string_to_cut);
+    console.log("return_string", return_string)
     
     const newWord = await pool.query(
       'INSERT INTO word (string_to_cut, return_string) VALUES ($1, $2) RETURNING *',
