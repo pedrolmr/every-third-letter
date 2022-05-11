@@ -1,4 +1,4 @@
-CREATE DATABASE words
+-- CREATE DATABASE words
 
 CREATE TABLE word(
   word_id SERIAL PRIMARY KEY,
