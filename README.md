@@ -1,5 +1,7 @@
 # EVERY THIRD LETTER REST API
 
+This API accepts a POST request to the route “/test”, which accepts one argument `string_to_cut` and returns a JSON object with the key `return_string` and a string containing every third letter from the original string
+
 ## Get list of words
 
 `GET /test/`
