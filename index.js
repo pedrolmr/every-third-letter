@@ -34,17 +34,11 @@ app.post("/test", async (req, res) => {
     const { string_to_cut } = req.body;
     const return_string = everyThreeLetter(string_to_cut);
     
-    const newWord = await pool.query(
+    await pool.query(
       'INSERT INTO word (string_to_cut, return_string) VALUES ($1, $2) RETURNING *',
       [string_to_cut, return_string]
     );
-
-    const id = newWord.rows[0].word_id;
-    const single_word = await pool.query("SELECT return_string FROM word WHERE word_id = $1", [
-        id,
-    ]);
-
-    res.json(single_word.rows[0]);
+    res.json({"return_string": return_string});
   } catch (err) {
     console.error(err.message);
   }
